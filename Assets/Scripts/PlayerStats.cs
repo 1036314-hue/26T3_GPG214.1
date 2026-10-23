@@ -3,14 +3,15 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerStats
 {
-    [SerializeField]
-    private string playerName;
+    public string playerName;
 
-    [SerializeField]
-    private float playerHealth;
+    public float playerHealth;
     
-    [SerializeField]
-    private string playerWeapon;
+    public string playerWeapon;
+
+    public Vector3 playerPosition = new Vector3(10, 5, 7); 
+
+    public float[] playerPositionArray = new float[] { 0, 0, 0 };
 
     public PlayerStats()
     {
@@ -28,9 +29,25 @@ public class PlayerStats
         this.playerWeapon = playerWeapon;
     }
 
+    void SetPlayerPosition(Vector3 playerPos)
+    {
+        playerPositionArray[0] = playerPos.x;
+        playerPositionArray[1] = playerPos.y;
+        playerPositionArray[2] = playerPos.z;
+        }
+
+    public Vector3 ReturnPlayerPosition()
+    {
+        if(playerPositionArray.Length < 3)
+        {
+            Debug.Log("Not Elements in the array");
+            return Vector3.zero;
+        }
+        return new Vector3(playerPositionArray[0], playerPositionArray[1], playerPositionArray[2]);
+    }
     public string ReturnPlayerSaveData()
     {
-        string returnData = "Name: " + playerName + "Health: " + playerHealth + "Weapon: " + playerWeapon;
+        string returnData = "Name: " + playerName + ", Health: " + playerHealth + ", Weapon: " + playerWeapon;
 
         return playerName;
     }
