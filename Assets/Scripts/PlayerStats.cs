@@ -9,7 +9,7 @@ public class PlayerStats
     
     public string playerWeapon;
 
-    public Vector3 playerPosition = new Vector3(10, 5, 7); 
+    //public Vector3 playerPosition = new Vector3(10, 5, 7); 
 
     public float[] playerPositionArray = new float[] { 0, 0, 0 };
 
@@ -18,23 +18,23 @@ public class PlayerStats
 
     }
 
-    public PlayerStats(string playerName, string playerHealth, string playerWeapon)
+    public PlayerStats(string PlayerName, string PlayerHealth, string PlayerWeapon)
     {
-        this.playerName = playerName;
-        if(float.TryParse(playerHealth, out this.playerHealth))
+        playerName = PlayerName;
+        if(!float.TryParse(PlayerHealth, out playerHealth))
         {
             Debug.LogError("Can't Convert Player Health to Float");
         }
         
-        this.playerWeapon = playerWeapon;
+        playerWeapon = PlayerWeapon;
     }
 
-    void SetPlayerPosition(Vector3 playerPos)
+    public void SetPlayerPosition(Vector3 playerPos)
     {
         playerPositionArray[0] = playerPos.x;
         playerPositionArray[1] = playerPos.y;
         playerPositionArray[2] = playerPos.z;
-        }
+    }
 
     public Vector3 ReturnPlayerPosition()
     {
