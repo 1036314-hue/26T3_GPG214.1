@@ -8,6 +8,7 @@ public class JSONFiles : MonoBehaviour
     public string folderPath = Application.streamingAssetsPath;
     private string fullFilePath = string.Empty;
 
+
     private BoxSpawner boxSpawner;
     private ConveyorBelt conveyorBelt;
 
@@ -16,20 +17,9 @@ public class JSONFiles : MonoBehaviour
        fullFilePath = Path.Combine(folderPath, playerJSONFileName);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            SaveJSON();
-        }
-        if (Input.GetKeyUp(KeyCode.L))
-        {
-            LoadJSON();
-        }
-    }
+    
 
-    void SaveJSON()
+    public void SaveJSON()
     {
         boxSpawner = Object.FindFirstObjectByType<BoxSpawner>();
         conveyorBelt = Object.FindFirstObjectByType<ConveyorBelt>();
@@ -41,11 +31,11 @@ public class JSONFiles : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Unable to find reference for box spawner or conveyorbelt");
+            //Debug.LogError("Unable to find reference for box spawner or conveyorbelt");
         }
     }
 
-    void LoadJSON()
+    public void LoadJSON()
     {
         if(File.Exists(fullFilePath))
         {
@@ -64,12 +54,12 @@ public class JSONFiles : MonoBehaviour
             }
             else
             {
-                Debug.LogError("Unable to find reference for box spawner or conveyorbelt");
+                //Debug.LogError("Unable to find reference for box spawner or conveyorbelt");
             }
         }
         else
         {
-            Debug.LogError("No Save Data Found");
+            //Debug.LogError("No Save Data Found");
         }
     }
 }

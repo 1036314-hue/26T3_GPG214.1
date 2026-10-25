@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f402dee2f3a70db4188f65e9b96f7906, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
+  speed: 100
   direction: {x: 1, y: 0, z: 0}
   gameObjects: []
   destroyedBoxCount: 0

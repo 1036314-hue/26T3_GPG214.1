@@ -37,19 +37,19 @@ public class LoadConveyorBeltFromAssetBundle : MonoBehaviour
         {
             while (!downloadOperation.isDone)
             {
-                Debug.Log("Download" + ((downloadOperation.progress / 1f) * 100)+ "%");
+                //Debug.Log("Download" + ((downloadOperation.progress / 1f) * 100)+ "%");
                 yield return null;
             }
             
             //Check if errors in download
             if (assetBundleRequest.result == UnityWebRequest.Result.ConnectionError || assetBundleRequest.result == UnityWebRequest.Result.ProtocolError)
             {
-                Debug.LogError("Error with Download at " + combinedPath);
+                //Debug.LogError("Error with Download at " + combinedPath);
                 //Break out
                 yield break;
             }
 
-            Debug.Log("Download Complete");
+            //Debug.Log("Download Complete");
 
             bundle = DownloadHandlerAssetBundle.GetContent(assetBundleRequest);
 
@@ -59,7 +59,7 @@ public class LoadConveyorBeltFromAssetBundle : MonoBehaviour
         }
         else
         {
-            Debug.LogError("File does not exist in " + combinedPath);
+            //Debug.LogError("File does not exist in " + combinedPath);
         }
         yield return null;
     }

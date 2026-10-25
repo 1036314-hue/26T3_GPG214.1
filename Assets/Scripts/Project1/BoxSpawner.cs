@@ -57,17 +57,17 @@ public class BoxSpawner : Singleton<BoxSpawner>
         //Check download status
         while (!downloadOperation.isDone)
         {
-            Debug.Log("Download progress " + ((downloadOperation.progress / 1f) * 100) + "%");
+            //Debug.Log("Download progress " + ((downloadOperation.progress / 1f) * 100) + "%");
             yield return null;
         }
         //Error check 
         if (imageRequest.result == UnityWebRequest.Result.ConnectionError || imageRequest.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.Log("Error with download at " + imageFileName);
+            //Debug.Log("Error with download at " + imageFileName);
             yield break;
         }
 
-        Debug.Log("Download Complete");
+        //Debug.Log("Download Complete");
         //convert to bytes
         byte[] allDataDownloaded = imageRequest.downloadHandler.data;
         //transform image request to texture
@@ -92,17 +92,17 @@ public class BoxSpawner : Singleton<BoxSpawner>
         //Checking if file done 
         while (!downloadOperation.isDone)
         {
-            Debug.Log("Download progress " + ((downloadOperation.progress / 1f) * 100) + "%");
+            //Debug.Log("Download progress " + ((downloadOperation.progress / 1f) * 100) + "%");
             yield return null;
         }
 
         if (audioClipRequest.result == UnityWebRequest.Result.ConnectionError || audioClipRequest.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.Log("Error with download");
+            //Debug.Log("Error with download");
             yield break;
         }
 
-        Debug.Log("Download Complete");
+        //Debug.Log("Download Complete");
 
         clip = DownloadHandlerAudioClip.GetContent(audioClipRequest);
 

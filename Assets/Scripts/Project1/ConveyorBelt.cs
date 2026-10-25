@@ -18,7 +18,7 @@ public class ConveyorBelt : MonoBehaviour
 
     private string audioFileName = "Audio/YouDidTheThing.wav";
 
-    private void Update()
+    private void OnCollisionStay()
     {
         for (int i = 0; i <= gameObjects.Count - 1; i++)
         {
@@ -48,17 +48,17 @@ public class ConveyorBelt : MonoBehaviour
         //Checking if file done 
         while (!downloadOperation.isDone)
         {
-            Debug.Log("Download progress " + ((downloadOperation.progress / 1f) * 100) + "%");
+            //Debug.Log("Download progress " + ((downloadOperation.progress / 1f) * 100) + "%");
             yield return null;
         }
 
         if (audioClipRequest.result == UnityWebRequest.Result.ConnectionError || audioClipRequest.result == UnityWebRequest.Result.ProtocolError)
         {
-            Debug.Log("Error with download at " + audioFileName);
+            //Debug.Log("Error with download at " + audioFileName);
             yield break;
         }
 
-        Debug.Log("Download Complete");
+        //Debug.Log("Download Complete");
 
         clip = DownloadHandlerAudioClip.GetContent(audioClipRequest);
 
