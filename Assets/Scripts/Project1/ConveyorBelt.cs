@@ -22,7 +22,7 @@ public class ConveyorBelt : MonoBehaviour
     {
         for (int i = 0; i <= gameObjects.Count - 1; i++)
         {
-            gameObjects[i].GetComponent<Rigidbody>().linearVelocity = speed * direction * Time.deltaTime;
+            gameObjects[i].GetComponent<Rigidbody>().linearVelocity = (speed + (destroyedBoxCount * 2) + 1) * direction * Time.deltaTime;
         }
     }
 

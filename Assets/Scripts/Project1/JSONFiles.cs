@@ -5,7 +5,7 @@ public class JSONFiles : MonoBehaviour
 {
     public DataToSave saveData = new DataToSave();
     public string playerJSONFileName = "Save.json";
-    public string folderPath = Application.streamingAssetsPath;
+    private string folderPath = Application.streamingAssetsPath;
     private string fullFilePath = string.Empty;
 
 

@@ -18,7 +18,7 @@ public class BoxSpawner : Singleton<BoxSpawner>
 
     private GameObject box;
 
-    public string streamingAssetsFolderPath = Application.streamingAssetsPath;
+    private string streamingAssetsFolderPath = Application.streamingAssetsPath;
 
     public float boxSpawnSpeed = 5;
 
@@ -51,7 +51,7 @@ public class BoxSpawner : Singleton<BoxSpawner>
     IEnumerator LoadTextureFromFile()
     {
         //Create path to file
-        UnityWebRequest imageRequest = UnityWebRequestTexture.GetTexture(Path.Combine(streamingAssetsFolderPath, imageFileName[Random.Range(1, 6)]));
+        UnityWebRequest imageRequest = UnityWebRequestTexture.GetTexture(Path.Combine(streamingAssetsFolderPath, imageFileName[Random.Range(0, 5)]));
         //Send path to request
         AsyncOperation downloadOperation = imageRequest.SendWebRequest();
         //Check download status
