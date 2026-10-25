@@ -1,0 +1,44 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.72f1
+CRC: 2759890560
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: fb9e4b192ff14c697bea5efa779bfc06
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8cfc160e8b0e1d3e5a7dce6250ecbe01
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 4f3fa4223094cc0321e2206f7b1be160
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: f402dee2f3a70db4188f65e9b96f7906, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f750cc4d0efdfeb439dd1d030f93795c, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Prefabs/ConveyorBelt.prefab
+- Assets/Prefabs/BoxSpawner.prefab
+Dependencies: []
